@@ -5,8 +5,7 @@ from PyQt5.QtWidgets import QApplication, QLabel, QMainWindow
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QFont
 
-# Atur variabel lingkungan untuk menghilangkan peringatan
-os.environ["QT_AUTO_SCREEN_SCALE_FACTOR"] = "1"  # Aktifkan skala otomatis
+os.environ["QT_AUTO_SCREEN_SCALE_FACTOR"] = "1"  
 
 class MouseCoordinateLabel(QLabel):
     def __init__(self, parent=None):
@@ -14,10 +13,8 @@ class MouseCoordinateLabel(QLabel):
         self.setText("x: 0, y: 0")
         self.setAlignment(Qt.AlignCenter)
 
-        # Atur font menjadi bold dan ukuran lebih besar
         font = QFont()
-        font.setBold(True)  # Set font menjadi bold
-        font.setPointSize(14)  # Set ukuran font menjadi 14
+        font.setBold(True)   
         self.setFont(font)
 
     def move_randomly(self):
@@ -47,18 +44,14 @@ class MainWindow(QMainWindow):
         self.label.setFixedSize(200, 50)
         self.label.move(300, 250)
 
-        # Aktifkan pelacakan mouse
         self.setMouseTracking(True)
 
     def mouseMoveEvent(self, event):
-        # Dapatkan posisi mouse relatif terhadap jendela utama
         x = event.x()
         y = event.y()
 
-        # Perbarui teks label dengan koordinat mouse
         self.label.setText(f"x: {x}, y: {y}")
 
-        # Jika mouse berada di atas label, pindahkan label ke posisi acak
         if self.label.underMouse():
             self.label.move_randomly()
 
