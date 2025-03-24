@@ -26,7 +26,7 @@ class POSApp(QMainWindow):
         self.cart_items = []
     
     def init_ui(self):
-        self.setWindowTitle("Aplikasi POS")
+        self.setWindowTitle("(F1D022059) Lalu. Restu Bagus Anugrah")
         self.setGeometry(100, 100, 500, 500)
         
         # Widget utama
@@ -125,11 +125,15 @@ class POSApp(QMainWindow):
             "subtotal": discounted_price
         })
         
+        # Perbarui tampilan
         self.update_cart_display()
+        
+        # Reset form
         self.spin_quantity.setValue(1)
         self.cb_discount.setCurrentIndex(0)
     
     def update_cart_display(self):
+        """Update cart display and total"""
         cart_text = ""
         total = 0
         
@@ -146,6 +150,7 @@ class POSApp(QMainWindow):
         self.lbl_total.setText(f"Total: Rp {total:,.0f}")
     
     def clear_cart(self):
+        """Clear shopping cart"""
         self.cart_items = []
         self.cart_display.clear()
         self.lbl_total.setText("Total: Rp 0")
