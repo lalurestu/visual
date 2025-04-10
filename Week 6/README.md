@@ -1,11 +1,11 @@
 ---
-# 🎨 Font Size and Color Adjuster
+# Font Size and Color Adjuster
 ## Oleh: Lalu Restu Bagus Anugrah (F1D022059)
 
 Aplikasi berbasis GUI ini dikembangkan menggunakan **PyQt5** dengan fungsi utama untuk mengatur ukuran teks, warna font, dan warna latar belakang melalui kontrol slider. Teks utama yang dapat dimodifikasi adalah NIM mahasiswa, sedangkan nama mahasiswa ditampilkan sebagai informasi di bagian atas antarmuka. Semua perubahan yang dilakukan akan langsung terlihat secara real-time.
 ---
 
-## 🧠 Penjelasan Per Fungsi
+## Penjelasan Per Fungsi
 
 ### `__init__(self)`
 
